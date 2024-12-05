@@ -55,7 +55,15 @@ namespace Fishy
             while (true) { 
                 string? message = Console.ReadLine();
                 if (!String.IsNullOrEmpty(message))
-                    new MessagePacket("Server: " + message).SendPacket("all", (int)CHANNELS.GAME_STATE);
+                {
+                    if (message.StartsWith("!"))
+                    {
+                        Console.WriteLine(DateTime.Now.ToString("dd.MM HH:mm:ss") + " Executing command.");
+                        CommandHandler.OnMessage(SteamClient.SteamId, message);
+                    }
+                    else
+                        new MessagePacket("Server: " + message).SendPacket("all", (int)CHANNELS.GAME_STATE);
+                }
             }
         }
 
