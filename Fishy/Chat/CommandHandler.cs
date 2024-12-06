@@ -29,6 +29,7 @@ namespace Fishy.Chat
             AddCommand(new Commands.KickCommand());
             AddCommand(new Commands.SetAdmin());
             AddCommand(new Commands.RevokeAdmin());
+            AddCommand(new Commands.TeleportCommand());
         }
        
         public static int GetPermissionLevel(SteamId player) // Temporary, ideally will have ranks
