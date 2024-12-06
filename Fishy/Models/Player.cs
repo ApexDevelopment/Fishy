@@ -10,6 +10,7 @@ namespace Fishy.Models
         public string Name { get; set; }
         public long InstanceID { get; set; }
         public Vector3 Position { get; set; }
+        public Vector3 Rotation { get; set; }
 
 
         public Player(SteamId id, string name)

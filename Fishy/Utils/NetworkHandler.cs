@@ -117,7 +117,9 @@ namespace Fishy.Utils
                         int playerIndex = Fishy.Players.FindIndex(p => p.InstanceID.Equals(packetInfo["actor_id"]));
                         if (playerIndex == -1)
                             break;
-                        Fishy.Players[playerIndex].Position = (Vector3)packetInfo["pos"];
+                        Player player = Fishy.Players[playerIndex];
+                        player.Position = (Vector3)packetInfo["pos"];
+                        player.Rotation = (Vector3)packetInfo["rot"];
                         break;
 
                     case "actor_action":
